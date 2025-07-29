@@ -29,9 +29,10 @@ public class Barista extends User {
     }
 
     // assign orders to this barista
-    public void setOrders(ArrayList<Orders> orders) {
-        this.orders = orders;
+    public void setOrders(ArrayList<Orders> EntireOrder) {
+        this.EntireOrder = EntireOrder;
     }
+
 
     // barista seeing all placed orders
     public String seePlaceOrder() {
