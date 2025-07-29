@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Barista extends User {
     private String userName;        
-    private String password;        
+    private String password;  
+    // priVvate      
 
     // Orders that the barista will manage
     private ArrayList<Orders> allOrders = new ArrayList<>();
