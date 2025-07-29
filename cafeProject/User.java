@@ -1,4 +1,4 @@
-package CafeOrderProject;
+
 
 public abstract class User {
     private String name;
