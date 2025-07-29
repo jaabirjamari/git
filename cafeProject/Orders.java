@@ -61,6 +61,7 @@ public class Orders {
         isFinished = finished;
     }
 
+    // toString method
     public String toString(){
         return ("Customization: " + CustomizeProduct +
                 "Product: " + product +

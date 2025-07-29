@@ -3,13 +3,11 @@
 import java.util.ArrayList;
 
 public class Barista extends User {
-    private String userName;        
-    private String password;  
-    // priVvate      
+    private String userName;                                         // username for barista
+    private String password;                                        // password for barista
+    private ArrayList<Orders> EntireOrder = new ArrayList<>();            // barista managing orders
 
-    // Orders that the barista will manage
-    private ArrayList<Orders> allOrders = new ArrayList<>();
-
+    // constructor
     public Barista(String name, String userName, String password) {
         super(name);
         this.userName = userName;
@@ -17,55 +15,59 @@ public class Barista extends User {
     }
 
     @Override
+    // get the role
     public String getRole() {
         return "Barista";
     }
 
     // Login method
-    public boolean login(String inputUsername, String inputPassword) {
-        return this.userName.equals(inputUsername) && this.password.equals(inputPassword);
+    public boolean login(String username, String password) {
+
+        // checking if username and password 
+        // in param is equals to username store in the obj
+        return this.userName.equals(username) && this.password.equals(password);
     }
 
-    // Assign orders to this barista
+    // assign orders to this barista
     public void setOrders(ArrayList<Orders> orders) {
-        this.allOrders = orders;
+        this.orders = orders;
     }
 
-    // See all placed orders
+    // barista seeing all placed orders
     public String seePlaceOrder() {
-        if (allOrders.isEmpty()) {
-            return "No orders placed yet.";
+        if (EntireOrder.isEmpty()) {
+            return "0 placed order";
         }
 
-        StringBuilder sb = new StringBuilder("Current Orders:\n");
-        for (int i = 0; i < allOrders.size(); i++) {
-            sb.append("Order ").append(i + 1).append(": ").append(allOrders.get(i)).append("\n");
+        StringBuilder curr = new StringBuilder("Current: ");      // current order 
+        for (int i = 0; i < EntireOrder.size(); i++) {
+            curr.append("Order ").append(i + 1).append(": ").append(EntireOrder.get(i)).append("\n");
         }
-        return sb.toString();
+        return curr.toString();
     }
 
-    // Update order status (unfinished → finished)
+    // Update order status to be unfinished currently making or finished
     public String updateOrder(int orderIndex) {
-        if (orderIndex >= 0 && orderIndex < allOrders.size()) {
-            Orders order = allOrders.get(orderIndex);
+        if (orderIndex >= 0 && orderIndex < EntireOrder.size()) {
+            Orders order = EntireOrder.get(orderIndex);
             order.setFinished(true);
-            return "Order " + (orderIndex + 1) + " marked as finished.";
+            return (orderIndex + 1) + " is finished";
         } else {
-            return "Invalid order index.";
+            return "no order ";
         }
     }
 
     // Notify that order is ready for pickup
     public String readyForPickup(int orderIndex) {
-        if (orderIndex >= 0 && orderIndex < allOrders.size()) {
-            Orders order = allOrders.get(orderIndex);
+        if (orderIndex >= 0 && orderIndex < EntireOrder.size()) {
+            Orders order = EntireOrder.get(orderIndex);
             if (order.isFinished()) {
-                return "Order " + (orderIndex + 1) + " is ready for pickup!";
+                return (orderIndex + 1) + " ready for pickup ";
             } else {
-                return "Order " + (orderIndex + 1) + " is not finished yet.";
+                return (orderIndex + 1) + " not finished";
             }
         } else {
-            return "Invalid order index.";
+            return "no order";
         }
     }
 }

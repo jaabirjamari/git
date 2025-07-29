@@ -1,8 +1,8 @@
 
-
 public abstract class User {
-    private String name;
+    private String name;        // name for user
 
+    // constructor  
     public User(String name){
         this.name = name;
     }
@@ -17,5 +17,6 @@ public abstract class User {
         this.name = name;
     }
 
+    // abstract get role to get roles
     public abstract String getRole();
 }
