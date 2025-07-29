@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 
 public class Customers extends User {
-    private ArrayList<Orders> customerOrders;           // store customer order in a list 
+    private ArrayList<Orders> customerOrders;            // store customer order in a list 
 
     // constructor
     public Customers(String name, ArrayList<Orders> customerOrders) {
@@ -35,7 +35,7 @@ public class Customers extends User {
     // place order method to place order 
     public void placeOrder() {
         if (customerOrders.isEmpty()) {
-            System.out.println("no orders placed ");
+            System.out.println(" no orders placed ");
         } else {
             System.out.println("placed order");
             for (Orders o : customerOrders) {

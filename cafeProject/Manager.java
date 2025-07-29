@@ -47,7 +47,7 @@ public class Manager extends User {
         } else {
             return item + " not found in the menu";       // item is not found
         }
-    }
+    }  
 
     // viewing the menu
     public String viewMenu() {

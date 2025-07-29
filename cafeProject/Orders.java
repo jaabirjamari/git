@@ -35,7 +35,7 @@ public class Orders {
     }
     
     public boolean isFinished() {
-        return isFinished;
+        return isFinished; 
     }
 
     //setters

@@ -44,7 +44,7 @@ public class Barista extends User {
         for (int i = 0; i < EntireOrder.size(); i++) {
             curr.append("Order ").append(i + 1).append(": ").append(EntireOrder.get(i)).append("\n");
         }
-        return curr.toString();
+        return curr.toString(); 
     }
 
     // Update order status to be unfinished currently making or finished

@@ -4,11 +4,11 @@ public abstract class User {
 
     // constructor  
     public User(String name){
-        this.name = name;
+        this.name = name; 
     }
 
     // getter
-    public String getName(){
+    public String getName(){ 
         return name;
     }
 
