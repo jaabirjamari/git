@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class main {
     public static void main(String[] args) {
         // Create a Manager
+        // 
         Manager manager = new Manager("Alice", "aliceManager", "pass123");
         System.out.println(manager.getRole() + " " + manager.getName());
 
