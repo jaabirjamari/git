@@ -1,3 +1,4 @@
+package Domain;
 
 public abstract class User {
     private String name;        // name for user
@@ -19,4 +20,10 @@ public abstract class User {
 
     // abstract get role to get roles
     public abstract String getRole();
+
+    @Override
+    public String toString() {
+        return getRole() + ": " + name;
+    }
+
 }
