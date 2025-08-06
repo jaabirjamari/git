@@ -36,7 +36,8 @@ public class OrderQueue implements Subject {
     } 
 
     public Order getNextOrder() { 
-        return pendingOrders.peek(); 
+        return pendingOrders.peek();
+        
     } 
 
     public List<Order> getAllPendingOrders() { 
